@@ -1,0 +1,6 @@
+apiVersion: example.air.com/v1
+kind: Hub
+metadata:
+  name: kube-jet-airways-atl-hub
+spec:
+  airLineName: kube-jet-airways

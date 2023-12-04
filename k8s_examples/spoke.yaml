@@ -1,0 +1,7 @@
+apiVersion: example.air.com/v1
+kind: Spoke
+metadata:
+  name: tampa-international-airport
+spec:
+  hubName: kube-jet-airways-atl-hub
+  airLineName: kube-jet-airways

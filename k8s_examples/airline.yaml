@@ -1,0 +1,7 @@
+apiVersion: example.air.com/v1
+kind: Airline
+metadata:
+  name: kube-jet-airways
+spec:
+  foo: bar
+  baz: qux

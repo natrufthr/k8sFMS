@@ -1,0 +1,8 @@
+apiVersion: example.air.com/v1
+kind: Flight
+metadata:
+  name: kj-1234
+spec:
+  going: kube-jet-airways-atl-hub
+  leaving: tampa-international-airport
+  airLineName: kube-jet-airways
