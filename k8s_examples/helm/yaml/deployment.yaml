@@ -16,6 +16,13 @@ spec:
       volumes:
       - name: shared-data
         emptyDir: {}
+      initContainers:
+      - name: init-script
+        image: k8sfmsinit:v1
+        volumeMounts:
+        - name: shared-data
+          mountPath: /app/data
+        command: ["/entrypoint.sh"]
       containers:
       - name: k8s-fms
         image: natrufthr/k8sfms:v7
@@ -24,15 +31,3 @@ spec:
         volumeMounts:
         - name: shared-data
           mountPath: /app/data
-      - name: kubectl
-        image: natrufthr/k8sfms:v7
-        command:
-        - sh
-        - -c
-        - |
-          # Your sidecar container script using kubectl commands
-          # kubectl version
-          sleep 365d
-        volumeMounts:
-        - name: shared-data
-          mountPath: /sidecar/data
