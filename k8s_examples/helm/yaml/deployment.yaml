@@ -18,14 +18,14 @@ spec:
         emptyDir: {}
       containers:
       - name: k8s-fms
-        image: natrufthr/k8sfms:v4
+        image: natrufthr/k8sfms:v5
         command: ["sleep", "365d"]
         # Add your container configuration here
         volumeMounts:
         - name: shared-data
           mountPath: /app/data
       - name: kubectl
-        image: natrufthr/k8sfms:v4
+        image: natrufthr/k8sfms:v5
         command:
         - sh
         - -c
