@@ -18,7 +18,7 @@ spec:
         emptyDir: {}
       initContainers:
       - name: init-script
-        image: k8sfmsinit:v1
+        image: natrufthr/k8sfmsinit:v1
         volumeMounts:
         - name: shared-data
           mountPath: /app/data
