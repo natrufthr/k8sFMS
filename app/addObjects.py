@@ -1,6 +1,8 @@
 from kubernetes import client, config, utils
 
-config.load_kube_config(config_file='config.yaml')
+config_file_location = '/app/data/config.yaml'
+
+config.load_kube_config(config_file=config_file_location)
 
 cOa = client.CustomObjectsApi()
 
