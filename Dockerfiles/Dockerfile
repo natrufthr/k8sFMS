@@ -1,5 +1,11 @@
+# Use a base image with kubectl
+FROM bitnami/kubectl:latest AS kubectl
+
 # Use an official Python runtime as a parent image
 FROM python:3.8-slim
+
+# Copy kubectl from the first stage
+COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/kubectl
 
 # Set the working directory in the container
 WORKDIR /app

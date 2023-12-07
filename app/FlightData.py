@@ -4,6 +4,8 @@ from kubernetes import client, config
 from textual.screen import Screen
 from textual import events
 
+
+
 ROWS = []
 
 class FlightApp(Screen):
@@ -16,7 +18,7 @@ class FlightApp(Screen):
         self.title = "To return to menu"
         self.sub_title = "-- Press X --"
 
-        config.load_kube_config(config_file='config.yaml')
+        config.load_kube_config(config_file='./app/data/config.yaml')
 
         cOa = client.CustomObjectsApi()
 
