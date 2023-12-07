@@ -2,7 +2,7 @@ from textual import events
 from textual.app import ComposeResult
 from textual.screen import Screen
 
-config_file_location = 'config.yaml'
+config_file_location = '/app/data/config.yaml'
 
 ROWS = []
 
