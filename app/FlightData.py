@@ -4,7 +4,7 @@ from kubernetes import client, config
 from textual.screen import Screen
 from textual import events
 
-
+config_file_location = './app/data/config.yaml'
 
 ROWS = []
 
@@ -18,7 +18,7 @@ class FlightApp(Screen):
         self.title = "To return to menu"
         self.sub_title = "-- Press X --"
 
-        config.load_kube_config(config_file='./app/data/config.yaml')
+        config.load_kube_config(config_file= config_file_location )
 
         cOa = client.CustomObjectsApi()
 
@@ -115,7 +115,7 @@ class HubApp(Screen):
         self.title = "To return to menu"
         self.sub_title = "-- Press X --"
 
-        config.load_kube_config(config_file='config.yaml')
+        config.load_kube_config(config_file= config_file_location)
 
         cOa = client.CustomObjectsApi()
 
@@ -212,7 +212,7 @@ class SpokeApp(Screen):
         self.title = "To return to menu"
         self.sub_title = "-- Press X --"
 
-        config.load_kube_config(config_file='config.yaml')
+        config.load_kube_config(config_file= config_file_location)
 
         cOa = client.CustomObjectsApi()
 
@@ -309,7 +309,7 @@ class AirlineApp(Screen):
         self.title = "To return to menu"
         self.sub_title = "-- Press X --"
 
-        config.load_kube_config(config_file='config.yaml')
+        config.load_kube_config(config_file= config_file_location)
 
         cOa = client.CustomObjectsApi()
 
