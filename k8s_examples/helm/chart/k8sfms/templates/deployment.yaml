@@ -24,8 +24,8 @@ spec:
           mountPath: /app/data
         command: ["/entrypoint.sh"]
       containers:
-        - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
         volumeMounts:
         - name: shared-data
           mountPath: /app/data
