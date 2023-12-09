@@ -2,12 +2,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: {{ .Values.appName }}
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.Namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: k8s-fms
+  name: {{ .Values.appName }}
 subjects:
 - kind: ServiceAccount
-  name: k8s-fms
+  name: {{ .Values.appName }}
   namespace: default
