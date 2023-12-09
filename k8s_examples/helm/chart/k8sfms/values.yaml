@@ -2,6 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+namespace: default
+
+appName: k8s-fms
+
 replicaCount: 1
 
 image:
