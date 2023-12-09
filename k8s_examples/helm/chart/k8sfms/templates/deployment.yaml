@@ -13,7 +13,7 @@ spec:
       labels:
         app: k8s-fms
     spec:
-      serviceAccountName: k8s-fms
+      serviceAccountName: {{ .Values.appName }}
       volumes:
       - name: shared-data
         emptyDir: {}
