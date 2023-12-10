@@ -3,6 +3,9 @@ from textual.app import ComposeResult
 from textual.screen import Screen
 from textual.widgets import DataTable, Header
 from kubernetes import client, config
+import os
+
+nameSpace = os.environ.get('NAMESPACE')
 
 config_file_location = '/app/data/config.yaml'
 
@@ -24,10 +27,10 @@ class FlightApp(Screen):
 
         v1 = client.CoreV1Api()
 
-        flightList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "flights").get('items')
-        airlineList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "airlines").get('items')
-        hubList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "hubs").get('items')
-        spokeList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "spokes").get('items')
+        flightList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "flights").get('items')
+        airlineList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "airlines").get('items')
+        hubList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "hubs").get('items')
+        spokeList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "spokes").get('items')
         flight_table = [["flight_name", "leaving", "going"]]
         airline_table = [["airline_name"]]
         spoke_table = [["spoke_name", "hub_name", "airlineName"]]
@@ -121,10 +124,10 @@ class HubApp(Screen):
 
         v1 = client.CoreV1Api()
 
-        flightList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "flights").get('items')
-        airlineList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "airlines").get('items')
-        hubList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "hubs").get('items')
-        spokeList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "spokes").get('items')
+        flightList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "flights").get('items')
+        airlineList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "airlines").get('items')
+        hubList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "hubs").get('items')
+        spokeList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "spokes").get('items')
         flight_table = [["flight_name", "leaving", "going"]]
         airline_table = [["airline_name"]]
         spoke_table = [["spoke_name", "hub_name", "airlineName"]]
@@ -218,10 +221,10 @@ class SpokeApp(Screen):
 
         v1 = client.CoreV1Api()
 
-        flightList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "flights").get('items')
-        airlineList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "airlines").get('items')
-        hubList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "hubs").get('items')
-        spokeList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "spokes").get('items')
+        flightList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "flights").get('items')
+        airlineList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "airlines").get('items')
+        hubList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "hubs").get('items')
+        spokeList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "spokes").get('items')
         flight_table = [["flight_name", "leaving", "going"]]
         airline_table = [["airline_name"]]
         spoke_table = [["spoke_name", "hub_name", "airlineName"]]
@@ -315,10 +318,10 @@ class AirlineApp(Screen):
 
         v1 = client.CoreV1Api()
 
-        flightList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "flights").get('items')
-        airlineList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "airlines").get('items')
-        hubList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "hubs").get('items')
-        spokeList = cOa.list_namespaced_custom_object("example.air.com", "v1", "default", "spokes").get('items')
+        flightList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "flights").get('items')
+        airlineList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "airlines").get('items')
+        hubList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "hubs").get('items')
+        spokeList = cOa.list_namespaced_custom_object("example.air.com", "v1", str(nameSpace), "spokes").get('items')
         flight_table = [["flight_name", "leaving", "going"]]
         airline_table = [["airline_name"]]
         spoke_table = [["spoke_name", "hub_name", "airlineName"]]
