@@ -10,7 +10,7 @@ image:
   repository: natrufthr/k8sfms
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v7"
+  tag: "v8"
 
 # imagePullSecrets: []
 # nameOverride: ""

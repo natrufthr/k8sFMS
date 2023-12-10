@@ -30,3 +30,6 @@ spec:
         volumeMounts:
         - name: shared-data
           mountPath: /app/data
+        env:
+        - name: NAMESPACE
+          value: "{{ .Release.Namespace }}"
