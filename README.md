@@ -13,21 +13,17 @@ What is this?
 ---
 Each Airline has a main hub airport wich connects to several spoke airports
 
-(image here)
-
-hub
-   -  spoke  
-
-(image here)
+![Alt text](/readme_images/flight-diagram.jpg)
+---
 
 To improve efficiancy it is sugested that the below rules are followed regaurding flight operations
-  - in the future we may design the platform to enforce this behavior
-
 
 Operational Rules
 1. Flights from 1 hub can not go to another hubs spoke
 
 2. Common operation spokes have common flights to and from hubs daily and hubs have common flights to each other daily
+
+  - in the future we may design the platform to enforce this behavior
 
 
 Quick-Start - Helm Install
@@ -35,6 +31,15 @@ Quick-Start - Helm Install
 
 
 To install run the below in the repo directory after it is cloned
+
+
+Install CRDs into K8s: 
+
+```bash
+kubectl apply -f /k8s_crds
+```
+
+Install helm chart in K8s:
 
 ```bash
 cd k8s_examples/helm/chart/
