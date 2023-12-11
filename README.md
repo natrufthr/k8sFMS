@@ -44,8 +44,60 @@ Install helm chart in K8s:
 ```bash
 cd k8s_examples/helm/chart/
 
-helm install --namespace namespace --create-namepsace --set appName=appname ./k8sfms
+helm install appname --namespace namespace --create-namespace --set appName=appname ./k8sfms
+
+helm install k8sfms3 --namespace k8sfms3 --create-namespace --set appName=k8sfms3 ./k8sfm
 ```
+
+K8sFMS TUI Operation
+--------------
+Terminal User Interface Operation
+
+
+After helm chart is installed you can take advantage of the TUI(Terminal User Interface)
+
+To access the Tui you have to exec into the pod in the deployment you deployed the helmchart. :
+
+```bash
+kubectl -n namespace exec -it podname -- bash
+```
+
+
+Once you exec into the pod you can run: 
+
+```bash
+python BasicTui.py
+```
+
+This will give you the TUI interface below:
+
+![Alt text](/readme_images/tui-home.jpg)
+
+From here you have a few sub menus: 
+- Flights
+    - View all of the flights in k8sfms
+- Hubs
+    - View all of the hubs in k8sfms
+- Spokes
+    - View all of the spokes in k8sfms
+- Airlines
+    - View all of the airlines in k8sfms
+- Create
+    - Add new objects to k8sfms
+
+#### Airline Screen: 
+
+![Alt text](/readme_images/tui-airline-screen.jpg)
+
+#### Create Screen: 
+
+![Alt text](/readme_images/tui-create-screen.jpg)
+
+#### Flights Screen: 
+
+#### Hubs Screen: 
+
+#### Spokes Screen: 
 
 ##### Future to do list
 
