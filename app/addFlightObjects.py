@@ -34,6 +34,13 @@ for a in buildList.blank_airline_table:
 
 blank_flight_table_list = []
 
+for a in buildList.blank_flight_table:
+    # print(a)
+    for b in a:
+        # print(b)
+        blank_flight_table_list.append(b)
+
+blank_combined_table_list = blank_hub_table_list + blank_spoke_table_list
 
 class AddSpoke(ModalScreen):   #failing
     """Screen with a dialog to quit."""
@@ -207,8 +214,10 @@ class AddFlight(ModalScreen):   #failing
             VerticalScroll(
                 Static("Add Spoke", classes="header"),
                 Input(placeholder="FlightName", id="flight_name"),
-                Input(placeholder="Leaving", id="leaving_name"),
-                Input(placeholder="Going", id="going_name"),
+                # Input(placeholder="Leaving", id="leaving_name"),
+                # Input(placeholder="Going", id="going_name"),
+                Select(((line, line) for line in blank_combined_table_list), id="leaving_name"),
+                Select(((line, line) for line in blank_combined_table_list), id="going_name"),
                 Select(((line, line) for line in blank_airline_table_list), id="airline_name"),
                 # Input(placeholder="AirlineName", id="airline_name"),
                 Button("Submit", variant="primary", id="submit_button")
