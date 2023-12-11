@@ -97,6 +97,8 @@ From here you have a few sub menus:
 
 #### Flights Screen: 
 
+![Alt text](/readme_images/tui-flight-screen.jpg)
+
 #### Create Screen: 
 
 ![Alt text](/readme_images/tui-create-screen.jpg)
