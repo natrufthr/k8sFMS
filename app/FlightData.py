@@ -50,11 +50,10 @@ class FlightApp(Screen):
 
         for i in flightList:
             test = i['metadata']
-            flight = (eval(i.get('metadata').get('annotations').get('kubectl.kubernetes.io/last-applied-configuration')))
-            flight_spec = flight.get('spec')
-            airlineName = flight_spec.get('airLineName')
-            flightLeaving = flight_spec.get('leaving')
-            flightGoing = flight_spec.get('going')
+            spec = i['spec']
+            airlineName = spec.get('airLineName')
+            flightLeaving = spec.get('leaving')
+            flightGoing = spec.get('going')
 
             flight_name = ''
 
@@ -152,11 +151,10 @@ class HubApp(Screen):
 
         for i in flightList:
             test = i['metadata']
-            flight = (eval(i.get('metadata').get('annotations').get('kubectl.kubernetes.io/last-applied-configuration')))
-            flight_spec = flight.get('spec')
-            airlineName = flight_spec.get('airLineName')
-            flightLeaving = flight_spec.get('leaving')
-            flightGoing = flight_spec.get('going')
+            spec = i['spec']
+            airlineName = spec.get('airLineName')
+            flightLeaving = spec.get('leaving')
+            flightGoing = spec.get('going')
 
             flight_name = ''
 
@@ -254,11 +252,10 @@ class SpokeApp(Screen):
 
         for i in flightList:
             test = i['metadata']
-            flight = (eval(i.get('metadata').get('annotations').get('kubectl.kubernetes.io/last-applied-configuration')))
-            flight_spec = flight.get('spec')
-            airlineName = flight_spec.get('airLineName')
-            flightLeaving = flight_spec.get('leaving')
-            flightGoing = flight_spec.get('going')
+            spec = i['spec']
+            airlineName = spec.get('airLineName')
+            flightLeaving = spec.get('leaving')
+            flightGoing = spec.get('going')
 
             flight_name = ''
 
@@ -356,11 +353,10 @@ class AirlineApp(Screen):
 
         for i in flightList:
             test = i['metadata']
-            flight = (eval(i.get('metadata').get('annotations').get('kubectl.kubernetes.io/last-applied-configuration')))
-            flight_spec = flight.get('spec')
-            airlineName = flight_spec.get('airLineName')
-            flightLeaving = flight_spec.get('leaving')
-            flightGoing = flight_spec.get('going')
+            spec = i['spec']
+            airlineName = spec.get('airLineName')
+            flightLeaving = spec.get('leaving')
+            flightGoing = spec.get('going')
 
             flight_name = ''
 
