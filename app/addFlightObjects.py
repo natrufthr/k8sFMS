@@ -57,8 +57,8 @@ class AddSpoke(ModalScreen):   #failing
                 Input(placeholder="SpokeName", id="spoke_name"),
                 # Input(placeholder="HubName", id="hub_name"),
                 # Input(placeholder="AirlineName", id="airline_name"),
-                Select(((line, line) for line in blank_hub_table_list), id="hub_name"),
-                Select(((line, line) for line in blank_airline_table_list), id="airline_name"),
+                Select(((line, line) for line in blank_hub_table_list), id="hub_name", prompt="Hub"),
+                Select(((line, line) for line in blank_airline_table_list), id="airline_name", prompt="Airline"),
                 Button("Submit", variant="primary", id="submit_button")
             )
         )
@@ -111,7 +111,7 @@ class AddHub(ModalScreen):   #failing
                 Static("Add Hub", classes="header"),
                 Input(placeholder="HubName", id="hub_name"),
                 # Input(placeholder="AirlineName", id="airline_name"),
-                Select(((line, line) for line in blank_airline_table_list), id="airline_name"),
+                Select(((line, line) for line in blank_airline_table_list), id="airline_name", prompt="Airline"),
                 Button("Submit", variant="primary", id="submit_button")
             )
         )
@@ -216,9 +216,9 @@ class AddFlight(ModalScreen):   #failing
                 Input(placeholder="FlightName", id="flight_name"),
                 # Input(placeholder="Leaving", id="leaving_name"),
                 # Input(placeholder="Going", id="going_name"),
-                Select(((line, line) for line in blank_combined_table_list), id="leaving_name"),
-                Select(((line, line) for line in blank_combined_table_list), id="going_name"),
-                Select(((line, line) for line in blank_airline_table_list), id="airline_name"),
+                Select(((line, line) for line in blank_combined_table_list), id="leaving_name", prompt="Leaving"),
+                Select(((line, line) for line in blank_combined_table_list), id="going_name", prompt="Going"),
+                Select(((line, line) for line in blank_airline_table_list), id="airline_name", prompt="Airline"),
                 # Input(placeholder="AirlineName", id="airline_name"),
                 Button("Submit", variant="primary", id="submit_button")
             )
