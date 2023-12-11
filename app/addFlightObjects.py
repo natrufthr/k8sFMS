@@ -87,7 +87,7 @@ class AddHub(ModalScreen):   #failing
             airline_name = self.query_one("#airline_name")
             airline_name = airline_name.value
 
-            addObjects.createSpoke(hub_name, airline_name)
+            addObjects.createHub(hub_name, airline_name)
             self.mount(Label("Added " + spoke_name + " press h to confirm"))
 
 
