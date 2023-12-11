@@ -1,10 +1,39 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Button, Footer, Label, Static, Input
+from textual.widgets import Button, Footer, Label, Static, Input, Select
 from textual.containers import Grid, Horizontal, VerticalScroll
 import addObjects
 from textual.screen import Screen, ModalScreen
 import BasicTui
 import FlightData
+import buildList
+
+
+blank_spoke_table_list = []
+
+for a in buildList.blank_spoke_table:
+    # print(a)
+    for b in a:
+        # print(b)
+        blank_spoke_table_list.append(b)
+
+blank_hub_table_list = []
+
+for a in buildList.blank_hub_table:
+    # print(a)
+    for b in a:
+        # print(b)
+        blank_hub_table_list.append(b)
+
+blank_airline_table_list = []
+
+for a in buildList.blank_airline_table:
+    # print(a)
+    for b in a:
+        # print(b)
+        blank_airline_table_list.append(b)
+
+blank_flight_table_list = []
+
 
 class AddSpoke(ModalScreen):   #failing
     """Screen with a dialog to quit."""
@@ -72,7 +101,8 @@ class AddHub(ModalScreen):   #failing
             VerticalScroll(
                 Static("Add Hub", classes="header"),
                 Input(placeholder="HubName", id="hub_name"),
-                Input(placeholder="AirlineName", id="airline_name"),
+                # Input(placeholder="AirlineName", id="airline_name"),
+                Select(((line, line) for line in blank_airline_table_list), id="airline_name"),
                 Button("Submit", variant="primary", id="submit_button")
             )
         )
