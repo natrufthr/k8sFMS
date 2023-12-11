@@ -87,12 +87,6 @@ From here you have a few sub menus:
 
 ![Alt text](/readme_images/tui-airline-screen.jpg)
 
-#### Create Screen: 
-
-![Alt text](/readme_images/tui-create-screen.jpg)
-
-#### Flights Screen: 
-
 #### Hubs Screen: 
 
 ![Alt text](/readme_images/tui-hub-screen.jpg)
@@ -100,6 +94,12 @@ From here you have a few sub menus:
 #### Spokes Screen: 
 
 ![Alt text](/readme_images/tui-spoke-screen.jpg)
+
+#### Flights Screen: 
+
+#### Create Screen: 
+
+![Alt text](/readme_images/tui-create-screen.jpg)
 
 ##### Future to do list
 
