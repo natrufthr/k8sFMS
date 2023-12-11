@@ -208,7 +208,7 @@ class AddFlight(ModalScreen):   #failing
                 Static("Add Spoke", classes="header"),
                 Input(placeholder="FlightName", id="flight_name"),
                 Input(placeholder="Leaving", id="leaving_name"),
-                Input(placeholder="Leaving", id="going_name"),
+                Input(placeholder="Going", id="going_name"),
                 Select(((line, line) for line in blank_airline_table_list), id="airline_name"),
                 # Input(placeholder="AirlineName", id="airline_name"),
                 Button("Submit", variant="primary", id="submit_button")
