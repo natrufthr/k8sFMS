@@ -95,7 +95,11 @@ From here you have a few sub menus:
 
 #### Hubs Screen: 
 
+![Alt text](/readme_images/tui-hub-screen.jpg)
+
 #### Spokes Screen: 
+
+![Alt text](/readme_images/tui-spoke-screen.jpg)
 
 ##### Future to do list
 
