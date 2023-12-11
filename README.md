@@ -45,8 +45,6 @@ Install helm chart in K8s:
 cd k8s_examples/helm/chart/
 
 helm install appname --namespace namespace --create-namespace --set appName=appname ./k8sfms
-
-helm install k8sfms3 --namespace k8sfms3 --create-namespace --set appName=k8sfms3 ./k8sfm
 ```
 
 K8sFMS TUI Operation
