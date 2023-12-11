@@ -88,7 +88,7 @@ class AddHub(ModalScreen):   #failing
             airline_name = airline_name.value
 
             addObjects.createHub(hub_name, airline_name)
-            self.mount(Label("Added " + spoke_name + " press h to confirm"))
+            self.mount(Label("Added " + hub_name + " press h to confirm"))
 
 
     def action_request_quit(self) -> None:
