@@ -3,12 +3,13 @@ from textual.app import App, ComposeResult
 from textual.widgets import Header, Select
 import json
 from kubernetes import client, config, utils
+import os
 
 listAirlines = ["apple", "banana", "cherry"]
 
-config_file_location='config.yaml'
+config_file_location='/app/data/config.yaml'
 
-nameSpace = "default"
+nameSpace = os.environ.get('NAMESPACE')
 
 
 
