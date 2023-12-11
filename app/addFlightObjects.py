@@ -48,8 +48,10 @@ class AddSpoke(ModalScreen):   #failing
             VerticalScroll(
                 Static("Add Spoke", classes="header"),
                 Input(placeholder="SpokeName", id="spoke_name"),
-                Input(placeholder="HubName", id="hub_name"),
-                Input(placeholder="AirlineName", id="airline_name"),
+                # Input(placeholder="HubName", id="hub_name"),
+                # Input(placeholder="AirlineName", id="airline_name"),
+                Select(((line, line) for line in blank_hub_table_list), id="hub_name"),
+                Select(((line, line) for line in blank_airline_table_list), id="airline_name"),
                 Button("Submit", variant="primary", id="submit_button")
             )
         )
@@ -206,7 +208,9 @@ class AddFlight(ModalScreen):   #failing
                 Static("Add Spoke", classes="header"),
                 Input(placeholder="FlightName", id="flight_name"),
                 Input(placeholder="Leaving", id="leaving_name"),
-                Input(placeholder="AirlineName", id="airline_name"),
+                Input(placeholder="Leaving", id="going_name"),
+                Select(((line, line) for line in blank_airline_table_list), id="airline_name"),
+                # Input(placeholder="AirlineName", id="airline_name"),
                 Button("Submit", variant="primary", id="submit_button")
             )
         )
