@@ -66,12 +66,17 @@ class FlightApp(Screen):
             flight_table.append(table)
 
         for i in hubList:
-            hub = (eval(i.get('metadata').get('annotations').get('kubectl.kubernetes.io/last-applied-configuration')))
-            hub_name = hub.get('metadata').get('name')
-            hub_spec = hub.get('spec')
-            airlineName = hub_spec.get('airLineName')
-            spoke_name = hub_spec.get('spokeName')
-            # ## print(flight_spec)
+            test = i['metadata']
+            spec = i['spec']
+            airlineName = spec.get('airLineName')
+            hub_name = ''
+
+            for key, value in test.items():
+                if key == 'name':
+                    hub_name = value
+                    # print(spoke_name)
+                    # print(hub_name)
+                    # print(airlineName)
             table = [hub_name, airlineName]
             hub_table.append(table)
 
@@ -163,12 +168,17 @@ class HubApp(Screen):
             flight_table.append(table)
 
         for i in hubList:
-            hub = (eval(i.get('metadata').get('annotations').get('kubectl.kubernetes.io/last-applied-configuration')))
-            hub_name = hub.get('metadata').get('name')
-            hub_spec = hub.get('spec')
-            airlineName = hub_spec.get('airLineName')
-            spoke_name = hub_spec.get('spokeName')
-            # ## print(flight_spec)
+            test = i['metadata']
+            spec = i['spec']
+            airlineName = spec.get('airLineName')
+            hub_name = ''
+
+            for key, value in test.items():
+                if key == 'name':
+                    hub_name = value
+                    # print(spoke_name)
+                    # print(hub_name)
+                    # print(airlineName)
             table = [hub_name, airlineName]
             hub_table.append(table)
 
@@ -260,12 +270,17 @@ class SpokeApp(Screen):
             flight_table.append(table)
 
         for i in hubList:
-            hub = (eval(i.get('metadata').get('annotations').get('kubectl.kubernetes.io/last-applied-configuration')))
-            hub_name = hub.get('metadata').get('name')
-            hub_spec = hub.get('spec')
-            airlineName = hub_spec.get('airLineName')
-            spoke_name = hub_spec.get('spokeName')
-            # ## print(flight_spec)
+            test = i['metadata']
+            spec = i['spec']
+            airlineName = spec.get('airLineName')
+            hub_name = ''
+
+            for key, value in test.items():
+                if key == 'name':
+                    hub_name = value
+                    # print(spoke_name)
+                    # print(hub_name)
+                    # print(airlineName)
             table = [hub_name, airlineName]
             hub_table.append(table)
 
@@ -357,12 +372,17 @@ class AirlineApp(Screen):
             flight_table.append(table)
 
         for i in hubList:
-            hub = (eval(i.get('metadata').get('annotations').get('kubectl.kubernetes.io/last-applied-configuration')))
-            hub_name = hub.get('metadata').get('name')
-            hub_spec = hub.get('spec')
-            airlineName = hub_spec.get('airLineName')
-            spoke_name = hub_spec.get('spokeName')
-            # ## print(flight_spec)
+            test = i['metadata']
+            spec = i['spec']
+            airlineName = spec.get('airLineName')
+            hub_name = ''
+
+            for key, value in test.items():
+                if key == 'name':
+                    hub_name = value
+                    # print(spoke_name)
+                    # print(hub_name)
+                    # print(airlineName)
             table = [hub_name, airlineName]
             hub_table.append(table)
 
