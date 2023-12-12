@@ -246,7 +246,10 @@ class AddFlight(ModalScreen):   #failing
                 self.mount(Label("Added " + flight_name + " press f to confirm"))
             except Exception as e:
                 error_message = str(e)
-                self.mount(Label(f"Caught an exception: {error_message}"))
+                if e.status == 422:
+                    self.mount(Label("---- error 422 invalid character please correct ----"))
+                else:     
+                    self.mount(Label(f"Caught an exception: {error_message}"))
 
     def action_request_quit(self) -> None:
         """Action to display the quit dialog."""
