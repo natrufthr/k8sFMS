@@ -244,10 +244,10 @@ class AddFlight(ModalScreen):   #failing
 
                 addObjects.createFlight(flight_name, going_name, leaving_name, airline_name)
                 self.mount(Label("Added " + flight_name + " press f to confirm"))
-            except ApiException as e:
-                if e.status == 422:
-                    self.mount(Label(f"Caught ApiException with status 422: {e}"))
-                    
+            except Exception as e:
+                error_message = str(e)
+                self.mount(Label(f"Caught an exception: {error_message}"))
+
                 else: 
 
                     raise
