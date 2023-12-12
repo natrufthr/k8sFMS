@@ -210,9 +210,10 @@ class AddFlight(ModalScreen):   #failing
                 ("s", "view_spokes", "Spokes"), ("a", "view_airlines", "Airlines"), ("c", "view_create", "Create")]
 
     def compose(self) -> ComposeResult:
+        yield Footer()
         yield Horizontal(
             VerticalScroll(
-                Static("Add Spoke", classes="header"),
+                Static("Add Flight", classes="header"),
                 Input(placeholder="FlightName", id="flight_name"),
                 # Input(placeholder="Leaving", id="leaving_name"),
                 # Input(placeholder="Going", id="going_name"),

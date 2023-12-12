@@ -103,6 +103,21 @@ From here you have a few sub menus:
 
 ![Alt text](/readme_images/tui-create-screen.jpg)
 
+#### Create Hub: 
+
+![Alt text](/readme_images/tui-create-hub-screen.jpg)
+
+#### Create Spoke: 
+
+![Alt text](/readme_images/tui-create-spoke-screen.jpg)
+
+#### Create Airline: 
+
+![Alt text](/readme_images/tui-create-airline-screen.jpg)
+
+#### Create Flight: 
+
+
 ##### Future to do list
 
 ```
