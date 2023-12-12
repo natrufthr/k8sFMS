@@ -53,7 +53,7 @@ Terminal User Interface Operation
 
 After helm chart is installed you can take advantage of the TUI(Terminal User Interface)
 
-To access the Tui you have to exec into the pod in the deployment you deployed the helmchart. :
+To access the Tui you have to exec into the pod in the deployment you deployed the with the helmchart. :
 
 ```bash
 kubectl -n namespace exec -it podname -- bash
