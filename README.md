@@ -119,8 +119,3 @@ From here you have a few sub menus:
 
 ![Alt text](/readme_images/tui-create-flight-screen.jpg)
 
-##### Future to do list
-
-```
-I need to make it auto change names to lowercase when creating resources and add a dash between spaces
-```
