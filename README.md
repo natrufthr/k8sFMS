@@ -11,7 +11,7 @@ What is this?
 
 ### Airports are split out in to a heiarchy as follows: 
 ---
-Each Airline has a main hub airport wich connects to several spoke airports
+Each Airline has a main hub airport which connects to several spoke airports
 
 ![Alt text](/readme_images/flight-diagram.jpg)
 ---
