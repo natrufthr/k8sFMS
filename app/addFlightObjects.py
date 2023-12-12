@@ -74,9 +74,16 @@ class AddSpoke(ModalScreen):   #failing
 
             airline_name = self.query_one("#airline_name")
             airline_name = airline_name.value
-
-            addObjects.createSpoke(hub_name, airline_name, spoke_name)
-            self.mount(Label("Added " + spoke_name + " press s to confirm"))
+            
+            try:
+                addObjects.createSpoke(hub_name, airline_name, spoke_name)
+                self.mount(Label("Added " + spoke_name + " press s to confirm"))
+            except Exception as e:
+                error_message = str(e)
+                if e.status == 422:
+                    self.mount(Label("---- error 422 invalid character please correct ----"))
+                else:     
+                    self.mount(Label(f"Caught an exception: {error_message}"))
 
     def action_request_quit(self) -> None:
         """Action to display the quit dialog."""
@@ -126,8 +133,15 @@ class AddHub(ModalScreen):   #failing
             airline_name = self.query_one("#airline_name")
             airline_name = airline_name.value
 
-            addObjects.createHub(hub_name, airline_name)
-            self.mount(Label("Added " + hub_name + " press h to confirm"))
+            try:
+                addObjects.createHub(hub_name, airline_name)
+                self.mount(Label("Added " + hub_name + " press h to confirm"))
+            except Exception as e:
+                error_message = str(e)
+                if e.status == 422:
+                    self.mount(Label("---- error 422 invalid character please correct ----"))
+                else:     
+                    self.mount(Label(f"Caught an exception: {error_message}"))
 
 
     def action_request_quit(self) -> None:
@@ -179,8 +193,15 @@ class AddAirline(ModalScreen):   #failing
             airline_name = self.query_one("#airline_name")
             airline_name = str(airline_name.value).lower().replace('_', '-')
 
-            addObjects.createAirLine(airline_name)
-            self.mount(Label("Added " + airline_name + " press a to confirm"))
+            try:
+                addObjects.createAirLine(airline_name)
+                self.mount(Label("Added " + airline_name + " press a to confirm"))
+            except Exception as e:
+                error_message = str(e)
+                if e.status == 422:
+                    self.mount(Label("---- error 422 invalid character please correct ----"))
+                else:     
+                    self.mount(Label(f"Caught an exception: {error_message}"))
 
     def action_request_quit(self) -> None:
         """Action to display the quit dialog."""
