@@ -248,10 +248,6 @@ class AddFlight(ModalScreen):   #failing
                 error_message = str(e)
                 self.mount(Label(f"Caught an exception: {error_message}"))
 
-                else: 
-
-                    raise
-
     def action_request_quit(self) -> None:
         """Action to display the quit dialog."""
         self.app.push_screen(BasicTui.QuitScreen())
