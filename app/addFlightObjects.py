@@ -240,8 +240,17 @@ class AddFlight(ModalScreen):   #failing
             airline_name = self.query_one("#airline_name")
             airline_name = airline_name.value
 
-            addObjects.createFlight(flight_name, going_name, leaving_name, airline_name)
-            self.mount(Label("Added " + flight_name + " press f to confirm"))
+            try:
+
+                addObjects.createFlight(flight_name, going_name, leaving_name, airline_name)
+                self.mount(Label("Added " + flight_name + " press f to confirm"))
+            except ApiException as e:
+                if e.status == 422:
+                    self.mount(Label(f"Caught ApiException with status 422: {e}"))
+                    
+                else: 
+
+                    raise
 
     def action_request_quit(self) -> None:
         """Action to display the quit dialog."""
