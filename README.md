@@ -42,9 +42,8 @@ kubectl apply -f /k8s_crds
 Install helm chart in K8s:
 
 ```bash
-cd k8s_examples/helm/chart/
 
-helm install appname --namespace namespace --create-namespace --set appName=appname ./k8sfms
+helm install appname --namespace namespace --create-namespace --set appName=appname ./helm/chart/k8sfms
 ```
 
 K8sFMS TUI Operation
