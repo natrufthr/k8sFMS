@@ -67,7 +67,7 @@ class AddSpoke(ModalScreen):   #failing
         button_id = event.button.id
         if button_id == "submit_button":
             spoke_name = self.query_one("#spoke_name")
-            spoke_name = spoke_name.value
+            spoke_name = str(spoke_name.value).lower()
 
             hub_name = self.query_one("#hub_name")
             hub_name = hub_name.value
@@ -121,7 +121,7 @@ class AddHub(ModalScreen):   #failing
         if button_id == "submit_button":
 
             hub_name = self.query_one("#hub_name")
-            hub_name = hub_name.value
+            hub_name = str(hub_name.value).lower()
 
             airline_name = self.query_one("#airline_name")
             airline_name = airline_name.value
@@ -177,7 +177,7 @@ class AddAirline(ModalScreen):   #failing
         if button_id == "submit_button":
 
             airline_name = self.query_one("#airline_name")
-            airline_name = airline_name.value
+            airline_name = str(airline_name.value).lower()
 
             addObjects.createAirLine(airline_name)
             self.mount(Label("Added " + airline_name + " press a to confirm"))
@@ -229,7 +229,7 @@ class AddFlight(ModalScreen):   #failing
         button_id = event.button.id
         if button_id == "submit_button":
             flight_name = self.query_one("#flight_name")
-            flight_name = flight_name.value
+            flight_name = str(flight_name.value).lower()
 
             leaving_name = self.query_one("#leaving_name")
             leaving_name = leaving_name.value
